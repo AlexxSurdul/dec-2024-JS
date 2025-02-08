@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>owu.com.ua - OKTEN SCHOOL</title>
+</head>
+<body>
+
+<script>
+    let arr = [
+    //    0   1   2
+        [11, 22, 33], // 0
+        [], // 1
+        [] // 2
+    ];// array in array (nested arrays), де кожен елемент масиву є масивом, який містить ще масив, тобто можна звертатись до елемента масиву всередині масиву
+    console.log(arr);
+    //                           0  1  2
+    let innerArray = arr[0]; // 11 22 33 - таким чином можна оголосити змінну і задати їй значення елемент масиву
+    console.log(innerArray[1]); // 22 - так можна вивести один з елементів масиву, так сказати другого рівня
+
+    console.log(arr[0][1]); // те ж саме, що вище, але спрощена конструкція, щоб звернутись до елемента внутрішнього масиву, тобто змінна arr -> масив 0 -> масив 1 всередині масиву 0
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switch</title>
+</head>
+<body>
+
+
+<script>
+
+    let color = prompt('enter color'); // для множинної перевірки краще підходить switch, для швидкої перевірки if/else
+
+
+    switch (color) {
+        case 'green':
+        case 'yellow':
+            console.log('go!');
+            
+            break; //оператор переривання, якщо спрацювала умова перед ним, щоб не запускати скрипт далі
+        case 'red':
+            console.log('stop');
+            break;
+        default:
+            console.log('????');
+    }
+
+
+</script>
+</body>
+</html>

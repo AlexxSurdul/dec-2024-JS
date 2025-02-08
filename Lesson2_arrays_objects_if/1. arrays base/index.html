@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>owu.com.ua - OKTEN SCHOOL</title>
+</head>
+<body>
+
+<script>
+
+    let arr; //оголошуємо змінну
+
+    arr = [123, 234, 345, -123, 0, true, 'asiugahd']; //задаємо значення елементів, значення в [] будуть масивом даних (array), перелічуємо їх через кому
+                                                    //індексуються, тобто нумеруються, елементи в масиві починаючи з нуля, тобто 0, 1, 2 , 3, 4 і тд.
+    console.log(arr); //виводимо значення всіх елементів масиву
+    console.log(arr[0]);//виводимо якийсь елемент масиву звертаючись через його індекс
+    console.log(arr[2]);
+    console.log(arr[4]);
+    console.log(arr.length);//виводимо загальну довжину масиву, тобто к-ть елементів
+
+    arr[0] = 'new value';//задаємо нове значення для зазначеного через індекс елемента масиву
+    console.log(arr);
+    arr[7] = 'okten';//можна додати в кінець масиву ще один елемент вказавши наступний індекс за останнім, тобто у нас 7 елементів від 0 до 6, наступний буде 7
+    console.log(arr);
+    arr[arr.length] = 1293883; //щоб не рахувати к-ть елементів можна використати для додавання нового елемента використати .length
+    console.log(arr);//логіка така, що .length це загальна к-ть елементів масиву, а останній індекс це "к-ть - 1", отже .length буде завжди вказувати на новий індекс в кінці
+    arr[arr.length] = 'aiffysadf';
+    console.log(arr);
+
+
+</script>
+</body>
+</html>
