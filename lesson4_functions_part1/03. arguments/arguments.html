@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments</title>
+</head>
+<body>
+<script>
+
+    // function calc(a, b) {
+    //     return a + b;
+    // }
+    //
+    // function calc(a,b,c) {
+    //     return a + b + c;
+    // }
+    //
+    // console.log(calc(10, 20));
+
+    function foobar() {
+        console.log(arguments);
+        if (arguments.length === 2) {
+            return arguments[0] + arguments[1];
+        } else if (arguments.length === 3) {
+            return arguments[0] + arguments[1] + arguments[2];
+
+        }
+    } //arguments використовуємо для того, щоб наша функція могла приймати різну кількість аргументів, наприклад щоб фунція могла порахувати 1+2+3 або 1+2
+      //кількість аргументів всередині функції можна задачи через цикл де в умові задамо arguments.length === "к-ть аргументів" і що зробити з результатом -  return arguments[0] + arguments[1];
+
+    console.log(foobar(10, 20));
+    console.log(foobar(10, 20, 30));
+
+
+</script>
+</body>
+</html>

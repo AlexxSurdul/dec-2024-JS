@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rest args</title>
+</head>
+<body>
+<script>
+
+
+    function asd(y, z, ...x) {
+        console.log(x);
+        console.log(Array.isArray(x)); //статичний метод який перевіряє чи введене значення є масивом
+
+    } //rest аргумент дає можливість мати функцію з невизначеною кількістю аргументів, записується в аргументи як ...x або ..."змінна"
+      //rest аргумент фактично є масивом
+
+    asd(1, 2, 3, 4, 5, true);
+
+</script>
+</body>
+</html>
