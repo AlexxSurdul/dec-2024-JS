@@ -52,12 +52,15 @@ while (d < 10) {
 // замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
 //
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+
+document.write(`<ul>`);
+
 for (const listOfItem of listOfItems) {
-    document.write(`<ul>
-        <li>${listOfItem}</li>
-    </ul>`);
+
+    document.write(`<li>${listOfItem}</li>`);
 }
 
+document.write(`</ul>`);
 
 // -----------------------------------------------
 //     #Hdjws7E
@@ -121,11 +124,11 @@ let products = [
 
 for (const product of products) {
 
-        document.write(`<div class="product-card">
+    document.write(`<div class="product-card">
                         <h3 class="product-title">${product.title}. Price - ${product.price}</h3>
                         <img src="${product.image}" alt="" class="product-image">
                         </div>`);
-    }
+}
 
 // --------------------
 // #4WrHwFTEop0
