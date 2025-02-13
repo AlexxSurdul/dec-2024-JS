@@ -155,7 +155,7 @@ function compareNumbers(arr) {
 
 console.log(compareNumbers([12, 25, -2, 0, 13.5, -12.6]));
 
-
+console.log('----------------------------')
 // #EKRNVPM
 // - створити функцію sum(arr) яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
 function sum(arr) {
@@ -168,23 +168,38 @@ function sum(arr) {
 
 console.log(sum([10.5, 9.5]));
 
-
+console.log('----------------------------')
 // #kpsbSQCt2Lf
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями значення у відповідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 
 function swap(arr, index1, index2) {
 
-    let num1 = arr[index1];
-    let num2 = arr[index2];
-
-
+    let numTemp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = numTemp;
+    console.log(arr);
 }
 
-console.log(swap([11,22,33,44],0,1))
+swap([11,22,33, 55, 44],4,1);
 
+console.log('----------------------------')
 // #mkGDenYnNjn
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
 
 
+function exchange(sumUAH,currencyValues,exchangeCurrency) {
+
+    for (const currencyValue of currencyValues) {
+        if (currencyValue.currency === exchangeCurrency) {
+            console.log(sumUAH / currencyValue.value);
+        }
+    }
+
+
+}
+
+exchange(10000,
+    [{currency:'UAH',value:1}, {currency:'USD',value:25},{currency:'EUR',value:42}, {currency:'GBP',value:47}],
+    'GBP'); // => 400
