@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fnExpression</title>
+</head>
+<body>
+<script>
+
+
+
+
+    greeting();
+    const greeting = function () {
+        console.log('hi!');
+    }; //function expresion - в даному випадку ми оголошуємо змінну в яку вкладаємо функцію, а фукнцію не можна викликати раніше, ніж ми її оголосили в коді
+
+
+    asd();
+    function asd() {
+        console.log('ashfdhgsafdh');
+    } //при оголошенні функції таким чином відбувається hoisting, образно вони ніби піднімаються догори скрипта і можуть бути запущені раніше, ніж вони оголошені в коді
+
+</script>
+</body>
+</html>
