@@ -191,5 +191,8 @@ const exchange = (sumUAH, currencyValues, exchangeCurrency) => {
 };
 
 exchange(10000,
-    [{currency:'UAH',value:1}, {currency:'USD',value:25},{currency:'EUR',value:42}, {currency:'GBP',value:47}],
+    [{currency: 'UAH', value: 1}, {currency: 'USD', value: 25}, {currency: 'EUR', value: 42}, {
+        currency: 'GBP',
+        value: 47
+    }],
     'GBP'); // => 400
