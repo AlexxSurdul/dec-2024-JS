@@ -2,7 +2,7 @@
 // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 
-let strCounter = (string) => string.length;
+const strCounter = (string) => string.length;
 console.log(strCounter('hello world'));
 console.log(strCounter('lorem ipsum'));
 console.log(strCounter('javascript is cool'));
@@ -12,7 +12,7 @@ console.log('----------------------------');
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 
-let strtoUpperCase = (a) => a.toUpperCase();
+const strtoUpperCase = (a) => a.toUpperCase();
 console.log(strtoUpperCase('hello world'));
 console.log(strtoUpperCase('lorem ipsum'));
 console.log(strtoUpperCase('javascript is cool'));
@@ -24,7 +24,7 @@ console.log('----------------------------');
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
 
-let strtoLowerCase = (a) => a.toLowerCase();
+const strtoLowerCase = (a) => a.toLowerCase();
 console.log(strtoLowerCase('HELLO WORLD'));
 console.log(strtoLowerCase('LOREM IPSUM'));
 console.log(strtoLowerCase('JAVASCRIPT IS COOL'));
@@ -35,7 +35,7 @@ console.log('----------------------------');
 // #0b89BkYZwu
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 
-let strD = ' dirty string   ';
+const strD = ' dirty string   ';
 console.log(strD.replaceAll(' ', ''))
 
 console.log('----------------------------');
@@ -44,7 +44,7 @@ console.log('----------------------------');
 //     let str = 'Ревуть воли як ясла повні';
 // let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
 
-let strR = 'Ревуть воли як ясла повні';
+const strR = 'Ревуть воли як ясла повні';
 console.log(strR.split(' '));
 
 console.log('----------------------------');
@@ -52,8 +52,8 @@ console.log('----------------------------');
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
 
 
-let numArr = [10,8,-7,55,987,-1011,0,1050,0];
-let stringArr = numArr.map(converter => converter.toString());
+const numArr = [10, 8, -7, 55, 987, -1011, 0, 1050, 0];
+const stringArr = numArr.map(converter => converter.toString());
 console.log(stringArr);
 
 console.log('----------------------------');
@@ -65,7 +65,7 @@ console.log('----------------------------');
 //
 // ==========================
 
-let nums = [11,21,3,-5,100];
+const nums = [11, 21, 3, -5, 100];
 
 
 function sortNums(array, direction) {
@@ -75,7 +75,7 @@ function sortNums(array, direction) {
         array.sort((a, b) => b - a);
     }
     return array;
-};
+}
 
 console.log(sortNums(nums, 'ascending')); // [3,11,21]
 console.log(sortNums(nums, 'descending')); // [21,11,3]
@@ -97,7 +97,7 @@ console.log('----------------------------');
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 // =========================
 
-let coursesAndDurationArray = [
+const coursesAndDurationArray = [
     {title: 'JavaScript Complex', monthDuration: 5},
     {title: 'Java Complex', monthDuration: 6},
     {title: 'Python Complex', monthDuration: 6},
@@ -106,9 +106,18 @@ let coursesAndDurationArray = [
     {title: 'Frontend', monthDuration: 4}
 ];
 
+const sortDuration = coursesAndDurationArray.sort((a, b) => a.monthDuration - b.monthDuration);
+console.log(sortDuration);
 
+const filterDuration = coursesAndDurationArray.filter((value) => value.monthDuration > 5);
+console.log(filterDuration);
 
+const mapDuration = coursesAndDurationArray.map((value, index) => {
+    return {id: index + 1, title: value.title, monthDuration: value.monthDuration};
+});
+console.log(mapDuration);
 
+console.log('----------------------------');
 //     #bolvdlhP
 // описати колоду карт (від 6 до туза без джокерів)
 // - знайти піковий туз
@@ -125,6 +134,35 @@ let coursesAndDurationArray = [
 //
 // =========================
 
+const cardSuits = ['spade', 'diamond', 'heart', 'clubs'];
+const cardValues = ['6', '7', '8', '9', '10', 'ace', 'jack', 'queen', 'king'];
+// const cardColors = ['red', 'black'];
+
+// const colorSuits = cardSuits.map(function (value) {
+//     if (value === 'spade' || value === 'clubs') {
+//         return {suit: value, color: cardColors[1]};
+//     } else {
+//         return {suit: value, color: cardColors[0]};
+//     }
+// })
+
+
+const cardsSet = [];
+for (const cardSuit of cardSuits) {
+    for (const cardValue of cardValues) {
+        const card = {value: cardValue, suit: cardSuit};
+        if (cardSuit === 'spade' || cardValue === 'clubs') {
+            card.color = 'black'
+        } else {
+            card.color = 'red';
+        }
+        cardsSet.push(card);
+    }
+}
+console.log(cardsSet);
+console.log('----------------------------');
+
+
 
 
 //     #EP5I1UUzAX
@@ -136,7 +174,6 @@ let coursesAndDurationArray = [
 //     clubs:[]
 // }
 // =========================
-
 
 
 // #4LJn7zBx
