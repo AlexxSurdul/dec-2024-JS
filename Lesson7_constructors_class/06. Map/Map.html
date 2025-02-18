@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    let map = new Map(); //Map це асоціація одного об'єкту з іншим - маппінг, до ключа можна прив'язати значення, або об'єкти
+    console.log(map);
+    let likar = {id: 'likar'};
+    let petya = {id: 'petya'};
+
+
+    map.set(likar, {name: 'roma', surname: 'oganov'});
+    map.set(petya, {name: 'oleksandr', surname: 'petrov'});
+    map.set(petya, {name: 'asdqwe', surname: 'qweqwe'}); //ключі в мапі унікальні, наступні звернення перезапишуть попередні дані
+
+    console.log(map);
+
+    console.log(map.get(likar));
+
+    // map.delete(likar);
+    console.log(map);
+    // map.clear();
+    console.log(map.size);
+    console.log(map.keys());
+
+    let from = Array.from(map.keys()); //мап можна проітерувати перетворивши його на масив
+    console.log(from);
+
+    console.log(map.values());
+
+    console.log(Array.from(map.values()));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>owu.com.ua - OKTEN SCHOOL</title>
+</head>
+<body>
+
+<script>
+
+    //    function User(name, age, status) { //функція конструктор будує пустий об'єкт this, далі можна визначити об'єктно-динамічні характеристики, щоб його наповнити.
+    //        this.name = name;             // Називати функцію прийнято з великої букви
+    //        this.age = age;
+    //        this.status = status;
+    //    }
+    //
+    //    let user1 = new User('asd', 123, true); //ключове слово new визначає, що це новий об'єкт
+    //    let user2 = new User('qwe', 12, false);
+
+    //
+    // function User(name, age, status, wife) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.status = status;
+    //     this.wife = wife
+    // }
+    //
+    // new User('asd', 123, true, {name: 'qwetrtqwe'}); //щоб додати об'єкт можна при виклику функції через new передати об'єкт з усіма характеристиками
+
+                                                        //або при визначенні характеристик в конструкторі визначити поля вбудованого об'єкта, як звичайні поля і потім передати їх
+    function User(name, age, status, wifeName, wifeAge) {
+        this.name = name;
+        this.age = age;
+        this.status = status;
+        this.wife = {name: wifeName, age: wifeAge}
+        this.greeting = function () {                   //конструктор може містити функцію
+            console.log('hi');
+        };
+    }
+
+    let user = new User('asd', 123, true, 'anna', 28);
+    console.log(user);
+
+
+</script>
+</body>
+</html>
