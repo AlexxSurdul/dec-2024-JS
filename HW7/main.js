@@ -2,15 +2,68 @@
 // - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 // створити пустий масив, наповнити його 10 об'єктами new User(....)
 //
+function User(id, name, surname, email, phone) {
+    this.id = id;
+    this.name = name;
+    this.surname = surname;
+    this.email = email;
+    this.phone = phone;
+}
+
+let users = [
+    new User(0, 'Іван', 'Іваненко', 'ivan@gmail.com', '+380505552233'),
+    new User(1, 'Олена', 'Петренко', 'olena@gmail.com', '+380675553344'),
+    new User(2, 'Андрій', 'Сидоренко', 'andriy@gmail.com', '+380935554455'),
+    new User(3, 'Марина', 'Коваленко', 'marina@gmail.com', '+380685556677'),
+    new User(4, 'Василь', 'Мельник', 'vasyl@gmail.com', '+380505558899'),
+    new User(5, 'Тетяна', 'Шевченко', 'tetiana@gmail.com', '+380675551122'),
+    new User(6, 'Олександр', 'Бондаренко', 'oleksandr@gmail.com', '+380935559900'),
+    new User(7, 'Катерина', 'Гриценко', 'kateryna@gmail.com', '+380685552233'),
+    new User(8, 'Юрій', 'Кравченко', 'yuriy@gmail.com', '+380505553344'),
+    new User(9, 'Наталія', 'Лисенко', 'nataliya@gmail.com', '+380675554455')
+];
+
+console.log(users);
+
 // #2ikXsE2WiKZ
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+
+const filteredUsers = users.filter(user => user.id%2 === 0);
+console.log(filteredUsers);
 //
 // #pOeHKct
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+const sortedUsers = users.sort((a, b) => a.id - b.id);
+console.log(sortedUsers);
+
 //
 // #nkMXISv
 // - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
+
+function Client (id, name, surname , email, phone, order) {
+    this.id = id;
+    this.name = name;
+    this.surname = surname;
+    this.email = email;
+    this.phone = phone;
+    this.order = order;
+}
+let clients = [
+    new Client(0, 'Іван', 'Іваненко', 'ivan@gmail.com', '+380505552233', ['Хліб', 'Молоко']),
+    new Client(1, 'Олена', 'Петренко', 'olena@gmail.com', '+380675553344', ['Кава', 'Цукор', 'Шоколад']),
+    new Client(2, 'Андрій', 'Сидоренко', 'andriy@gmail.com', '+380935554455', ['Яйця']),
+    new Client(3, 'Марина', 'Коваленко', 'marina@gmail.com', '+380685556677', ['Сир', 'Овочі', 'Фрукти']),
+    new Client(4, 'Василь', 'Мельник', 'vasyl@gmail.com', '+380505558899', ['Масло', 'Хліб', 'Молоко', 'Цукор']),
+    new Client(5, 'Тетяна', 'Шевченко', 'tetiana@gmail.com', '+380675551122', ['Овочі', 'Фрукти']),
+    new Client(6, 'Олександр', 'Бондаренко', 'oleksandr@gmail.com', '+380935559900', ['Яйця', 'Масло']),
+    new Client(7, 'Катерина', 'Гриценко', 'kateryna@gmail.com', '+380685552233', ['Шоколад', 'Кава']),
+    new Client(8, 'Юрій', 'Кравченко', 'yuriy@gmail.com', '+380505553344', ['Цукор', 'Молоко', 'Фрукти']),
+    new Client(9, 'Наталія', 'Лисенко', 'nataliya@gmail.com', '+380675554455', ['Сир', 'Хліб', 'Масло', 'Яйця', 'Шоколад'])
+];
+console.log(clients);
+
+
 //
 //
 // #8abtVjRv
