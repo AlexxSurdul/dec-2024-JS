@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // console.log({});             //JS функціональна мова програмування + прототипно-орієнтована
+    // console.log({}.__proto__);  //всі об'єкти будуються на основі певних вбудованих прототипів
+
+    let base = {
+        id: 1,
+        name: 'kokos'
+    }
+
+    let copy = Object.create(base); //.create створює новий об'єкт на основі прототипу, він не буде мати власних властивостей, а буде їх наслідувати
+    copy.surname = 'foobar';
+
+    console.log(base); // id -1
+    console.log(copy); // {}
+    console.log(copy.id); // 1
+    console.log(copy.name); // kokos
+    console.log(copy.hasOwnProperty('id'));//.hasOwnProperty - дослівно перевіряє чи має об'єкт власну властивість (чи він її наслідує з прототипу)
+    console.log(copy.hasOwnProperty('surname'));
+    copy.id = 100500;    //якщо ми задамо нове значення для наслідуємої властивості, то вона вже буде належати новому об'єкту як його власна
+    console.log(copy);
+    console.log(copy.hasOwnProperty('id'));
+
+    // let obj = {};
+    // obj.__proto__ = base;  //це такий спосіб напряму створити об'єкт через прототипіювання
+    // console.log(obj);
+
+
+</script>
+</body>
+</html>

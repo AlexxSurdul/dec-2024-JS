@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>owu.com.ua - OKTEN SCHOOL</title>
+</head>
+<body>
+
+<script>
+
+    // let name = 'vasya';
+    // let age = 31;
+    // let user = {
+    //     name,        //короткий запис еквівалентний name = name
+    //     age,
+    //     foo() {      //можна створювати функції одразу в об'єкті
+    //         console.log(this);
+    //     },
+    // }
+    // console.log(user);
+    // user.foo();
+//------------------------------------------------------------------
+    // let user = {
+    //     name: 'vasya',
+    //     age: 31,
+    //     foo() {
+    //         console.log('foo');
+    //     },
+    // };
+
+
+    // let {name,foo} = user; //деструктуризація об'єкту. Таким чином ми витягуємо властивості з об'єкту і робимо їх глобальними змінними
+    // console.log(name);
+    // // console.log(age);
+    // foo();
+    //
+    // function asd({name}) { //тут ми будемо витягувати для функції лише частину об'єкту, а саме лише властивість name
+    //     console.log(name)
+    // }
+    //
+    // let obj = {a: 'asduads', name: 'wqyreq'};
+    // asd(obj);              //отже наша функція asd при виклику буде брати об'єкт obj, але використає лише задане поле, тобто name
+
+    // let {status} = user;  //якщо властивості не існує, то змінна буде undefined
+    // console.log(status);
+// ------------------------------------------------------------------
+    // let name = 'vasya';
+    // let age = 31;
+    // let user = {
+    //     name,
+    //     age,
+    //     foo() {
+    //         console.log(this);
+    //     },
+    //     wife: {
+    //         name: 'anna'
+    //     }
+    // }
+    // console.log(user);
+    // user.foo();
+    //                                      //щоб не було дублювання оголошення змінних при деструктуризації об'єкту
+                                            //змінні можна переназивати поставивши двокрапку і написавши нове ім'я
+                                            //при деструктуризації об'єкту можна деструктуризувати підоб'єкт, наприклад wife:{name:wifeName}
+    // let {name: userName, age: userAge, wife:{name:wifeName},wife} = user;
+    // console.log(userName, userAge);
+    // console.log(wife);
+
+// ------------------------------------------------------------------
+
+    // let [a, , c] = [11, 22, 33]; //так само можна деструктурувати масив, в даному випадку а перша комірка, с третя комірка, третю комірку пропустили поставивши пробіл
+    // console.log(a, c);
+
+    let users = [
+        {name: 'vasya', age: 31, status: false},
+        {name: 'petya', age: 30, status: true},
+        {name: 'kolya', age: 29, status: true},
+        {name: 'olya', age: 28, status: false},
+        {name: 'max', age: 30, status: true},
+        {name: 'anya', age: 31, status: false},
+        {name: 'oleg', age: 28, status: false},
+        {name: 'andrey', age: 29, status: true},
+        {name: 'masha', age: 30, status: true},
+        {name: 'olya', age: 31, status: false},
+        {name: 'max', age: 31, status: true}
+    ];
+
+    let [{name, age, status}, user2] = users; //можна міксувати деструктуризацію об'єкта і масиву. {name, age, status} це фактично деструктурований user1
+    console.log(user2);
+
+
+</script>
+</body>
+</html>
