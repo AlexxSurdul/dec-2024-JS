@@ -11,12 +11,14 @@
 
 <script>
 
-    // let item = localStorage.getItem('asd');
+    // let item = localStorage.getItem('asd'); //дістає інфу/об'єкти з локал сторедж
     // console.log(item);
-    // localStorage.clear();
+    // localStorage.clear(); //чистить локал сторедж
 
-    // localStorage.setItem('user', JSON.stringify({id: 1, name: 'kokos'}));
+    // localStorage.setItem('user', JSON.stringify({id: 1, name: 'kokos'})); //записує інформацію в локал сторедж, або об'єкти через JSON.stringify
 
+
+    //-----тут ми витягуємо об'єкт у форматі JSON, парсимо, вносимо зміни і пишемо назад
     // let userJSON = localStorage.getItem('user');
     // console.log(userJSON);
     // let user = JSON.parse(userJSON);
@@ -24,7 +26,7 @@
     // user.age = 31;
     // console.log(user);
     // localStorage.setItem('user', JSON.stringify(user))
-
+    //------------------------------------------------------------------------------------
 
     // let users = [
     //     {name: 'vasya', age: 31, status: false},
@@ -40,7 +42,7 @@
     //     {name: 'max', age: 31, status: true}
     // ];
     //
-    // localStorage.setItem('users', JSON.stringify(users));
+    // localStorage.setItem('users', JSON.stringify(users)); //записали об'кт в локал сторедж
 
 
     let usersJSON = localStorage.getItem('users');

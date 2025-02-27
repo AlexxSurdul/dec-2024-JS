@@ -25,11 +25,11 @@
 <script>
 
     // let target = document.getElementById('target');
-    // // target.onclick = function (ev) {
+    // // target.onclick = function (ev) {      //один з івентів, який прив'язується до кліку, в даному випадку по кліку на div
     // //     console.log('click');
     // //     console.log(ev);
-    // // };
-    // // // target.onmousemove = function (ev) {
+    // // };                                        //якщо в всередині тегу написати "on" то можна буде глянути всі наявні івенти
+    // // // target.onmousemove = function (ev) {  //івент який слідкує за рухом миші
     // // //     console.log(ev.clientX, ev.clientY);
     // // //     let r = ev.clientX;
     // // //     let g = ev.clientX;
@@ -38,35 +38,35 @@
     // // // };
     // //
     // //
-    // // // target.onclick = function () {
+    // // // target.onclick = function () {      //при повторному заданні івента він перевизначиться
     // // //     console.log('asdhfhagdfhg');
     // // // };
     // // //
     // // // console.log(target);
     // //
-    // // // target.addEventListener('click', function (ev) {
-    // // //     console.log('asjdfyqtweyqwt');
+    // // // target.addEventListener('click', function (ev) { //addEventListener додає івенти, а не перевизначає
+    // // //     console.log('asjdfyqtweyqwt'); //тут не можна використовувати стрілочні функції, оскільки вони втрачають контекст this
     // // // })
     // //
-    // // target.onmouseover = function () {
+    // // target.onmouseover = function () { //записує коли заводимо мишу в елемент
     // //     console.log('over');
     // // };
     // //
-    // // target.onmouseleave = function () {
+    // // target.onmouseleave = function () {  //трекає виведення миші з елемента
     // //     console.log('leave');
     // // };
     //
     // // let i1 = document.getElementById('i1');
-    // // i1.oninput = function () {
-    // //     target.innerText = this.value;
+    // // i1.oninput = function () {            //івент на введення у форму
+    // //     target.innerText = this.value;    //тут ми за допомогою івенту записуємо введений текст в інший блок на сторінці
     // // };
     //
     // let f1 = document.forms.f1;
     //
-    // f1.onsubmit = function (ev) {
-    //     ev.preventDefault();
+    // f1.onsubmit = function (ev) { //івент який спрацьовує на відправку форми - submit
+    //     ev.preventDefault();      //функція яка забороняє дефолтні дії, в даному випадку перезагрузку сторінки при відправці форми
     //     console.log('hello');
-    //     let user = {name: this.username.value}
+    //     let user = {name: this.username.value} //ми сформували об'єкт, якому задали значення name і задали значення з поля введення форми
     //     console.log(user); // ls fetch api
     //
     // };
@@ -77,11 +77,11 @@
     //     //....
     // };
 
-    window.onload = function () {
+    window.onload = function () { //відслідковує загрузку браузерного вікна
         console.log('load');
     };
 
-    document.onreadystatechange = function () {
+    document.onreadystatechange = function () {     //відслідковує етапи загрузки сторінки
         if (document.readyState === 'interactive') {
             document.body.innerText = 'loading start...'
         }
