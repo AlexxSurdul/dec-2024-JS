@@ -4,8 +4,46 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
-<script src="main.js"></script>
+<style>
 
+    .hidden {
+        display: none;
+    }
+
+    div {
+        margin: 20px;
+        border: 1px solid;
+        width: 500px;
+        height: 25px;
+    }
+
+    button {
+        margin: 20px;
+    }
+
+    form {
+        margin: 20px;
+    }
+</style>
+<body>
+
+<form id="form">
+    <input id="age" name="age" type="number" placeholder="введи вік">
+    <button>check</button>
+</form>
+    <div id="result"></div>
+<hr>
+
+<form id="form2">
+    <input type="text" id="name" placeholder="ім'я">
+    <input type="text" id="surname" placeholder="прізвище">
+    <input type="number" id="age2" placeholder="вік">
+    <button>Submit</button>
+</form>
+    <div id="person"></div>
+<hr>
+
+
+<script src="main.js"></script>
 </body>
 </html>
