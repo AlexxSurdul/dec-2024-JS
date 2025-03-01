@@ -73,11 +73,20 @@ localStorage.setItem('value', number + 1);
 // Є сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html.
 // Інфу НЕ виводити в консоль, а малювати в DOM
 
+let sessionsList =[];
+    if (localStorage.getItem('sessionsList') === null) {
+        sessionsList.push ({date: new Date()});
+    } else {
+        sessionsList = JSON.parse(localStorage.getItem('sessionsList'));
+        sessionsList.push({date: new Date()});
+    }
+localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
 
 
 // #Jg0gPO00
 // створити конвертор ваги з кг у фунти. дані заповнюються через інпут.
 // При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок
+
 
 
 // #RbQGnH5DuC
