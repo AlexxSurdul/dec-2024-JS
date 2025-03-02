@@ -10,7 +10,7 @@
         display: none;
     }
 
-    div {
+    .block {
         margin: 20px;
         border: 1px solid;
         width: 500px;
@@ -23,27 +23,59 @@
 
     form {
         margin: 20px;
+        border: 1px solid;
+    }
+    input {
+        margin: 20px;
+        height: 25px;
     }
 </style>
 <body>
 
 <form id="form">
+    <label for="age">#j693ca8</label>
     <input id="age" name="age" type="number" placeholder="введи вік">
     <button>check</button>
+    <div class="block" id="result"></div>
 </form>
-    <div id="result"></div>
 <hr>
 
 <form id="form2">
+    <label for="name">#ymAmN2xJ</label>
     <input type="text" id="name" placeholder="ім'я">
     <input type="text" id="surname" placeholder="прізвище">
     <input type="number" id="age2" placeholder="вік">
     <button>Submit</button>
 </form>
-    <div id="person"></div>
+    <div class="block" id="person"></div>
 <hr>
 
+<form>
+    <h4>Конвертер</h4>
+    <label>#Jg0gPO00</label>
+    <input type="number" id="kilo" placeholder="кілограм">
+    <div class="block" id="pound"></div>
 
+</form>
+<hr>
+<div>
+    <h3>Таблиця</h3>
+    <div>
+        <label for="rows">Кількість рядків:</label>
+        <input type="number" id="rows" min="1" value="1">
+    </div>
+    <div>
+        <label for="cells">Кількість ячеєк:</label>
+        <input type="number" id="cells" min="1" value="1">
+    </div>
+    <div>
+        <label for="content">Вміст ячеєк:</label>
+        <input type="text" id="content">
+    </div>
+    <button id="generateBtn">Створити таблицю</button>
+
+    <div id="tableContainer"></div>
+</div>
 <script src="main.js"></script>
 </body>
 </html>

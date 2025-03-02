@@ -59,12 +59,13 @@ form2.onsubmit = function (ev) {
 // є сторінка, на якій є блок, в якому знаходиться цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
 const numberBox = document.createElement('div');
+numberBox.classList.add('block');
 document.body.appendChild(numberBox);
 
 let number = localStorage.getItem('value') || 0;
 number = parseInt(number);
 numberBox.textContent = number;
-localStorage.setItem('value', number + 1);
+localStorage.setItem('value', JSON.stringify(number + 1));
 
 
 // #LhSfdhM3
@@ -73,13 +74,13 @@ localStorage.setItem('value', number + 1);
 // Є сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html.
 // Інфу НЕ виводити в консоль, а малювати в DOM
 
-let sessionsList =[];
-    if (localStorage.getItem('sessionsList') === null) {
-        sessionsList.push ({date: new Date()});
-    } else {
-        sessionsList = JSON.parse(localStorage.getItem('sessionsList'));
-        sessionsList.push({date: new Date()});
-    }
+let sessionsList = [];
+if (localStorage.getItem('sessionsList') === null) {
+    sessionsList.push({date: new Date()});
+} else {
+    sessionsList = JSON.parse(localStorage.getItem('sessionsList'));
+    sessionsList.push({date: new Date()});
+}
 localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
 
 
@@ -87,17 +88,75 @@ localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
 // створити конвертор ваги з кг у фунти. дані заповнюються через інпут.
 // При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок
 
-
+const kilo = document.getElementById('kilo');
+const pound = document.getElementById('pound');
+kilo.oninput = function () {
+    pound.textContent = `${kilo.value * 2.20462262185}`;
+};
 
 // #RbQGnH5DuC
 // В localStorage зберігаються масиви. Вам потрібно зробити функцію, які дістає потрібний вам масив з localStorage та додає в нього об'єкт
 // сигнатура функції - addToLocalStorage(arrayName:string,objToAdd:any{}):void
 
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
+];
+
+localStorage.setItem('users', JSON.stringify(users));
+
+function addToLocalStorage(arrayName, objToAdd) {
+    let newArr = JSON.parse(localStorage.getItem(arrayName))
+    if (newArr !== null) {
+        newArr.push(objToAdd);
+        localStorage.setItem(arrayName, JSON.stringify(newArr));
+    }
+}
+
+addToLocalStorage('users', {name: 'sdgsgd', age: 55, status: true});
 
 //     #kUSgFqWY
 // Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вміст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 
+document.getElementById('generateBtn').addEventListener('click', function () {
+    // Отримуємо значення з інпутів
+    const rows = parseInt(document.getElementById('rows').value);
+    const cells = parseInt(document.getElementById('cells').value);
+    const content = document.getElementById('content').value;
+
+    // Очищаємо контейнер для таблиці
+    const tableContainer = document.getElementById('tableContainer');
+    tableContainer.innerHTML = '';
+
+    // Створюємо таблицю
+    const table = document.createElement('table');
+
+    // Додаємо рядки та ячейки
+    for (let i = 0; i < rows; i++) {
+        const row = document.createElement('tr');
+
+        for (let j = 0; j < cells; j++) {
+            const cell = document.createElement('td');
+            cell.textContent = content; // Вставляємо вміст у ячейку
+            row.appendChild(cell);
+        }
+
+        table.appendChild(row);
+    }
+
+    // Додаємо таблицю до контейнера
+    tableContainer.appendChild(table);
+});
 
 //     #bq1zkx7WP
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
