@@ -6,9 +6,11 @@
 </head>
 <body>
 <script>
+    //будуємо список ul
     let ul = document.createElement('ul');
     document.body.appendChild(ul);
 
+    //додаємо в li кожен об'єкт з масиву в localStorage
     let session = JSON.parse(localStorage.getItem('sessionsList'));
     for (const sessionElement of session) {
     let li = document.createElement('li');
