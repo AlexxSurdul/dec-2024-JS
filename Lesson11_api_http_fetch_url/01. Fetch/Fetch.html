@@ -12,9 +12,9 @@
 <script>
 
     // fetch('https://jsonplaceholder.typicode.com/users')
-    //     .then((asd) => asd.json())
+    //     .then((response) => response.json())
     //     .then((users) => {
-    //         for (const {name,username,email} of users) {
+    //         for (const {name,username,email} of users) { //при ітерації можна одразу вказати елементи об'єкта, які ми витягнемо - {name,username,email}
     //             document.write(`<div>
     //                 ${name} ${username}
     //             </div>`)
@@ -25,14 +25,14 @@
     fetch('https://dummyjson.com/products?limit=10')
         .then(value => value.json())
         .then(res => {
-            console.log(res);
-            let {products} = res;
+            console.log(res);   //тут консоль лог просто для візуалізації проміжного результату
+            let {products} = res; //витягуємо {products} з res через деструктуризацію
 
             document.write(`<div>`);
             for (const product of products) {
                 document.write(`<div>`);
                 document.write(`<p>${product.id}___ ${product.brand} - ${product.price}</p>`);
-                document.write(`<img src="${product.thumbnail}" alt="">`)
+                document.write(`<img src="${product.thumbnail}" alt="">`)    //alt+enter - можна вживити елемент з HTML з автокомплітом тегів через injection
                 document.write(`</div>`);
             }
             document.write(`</div>`);
@@ -41,7 +41,7 @@
         });
 
 
-    fetch('https://dummyjson.com/products/add', {
+    fetch('https://dummyjson.com/products/add', {   //далі описуємо тіло запиту із відповідними полями
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -49,7 +49,7 @@
         })
     })
         .then(res => res.json())
-        .then(value => console.log(value));
+        .then(value => console.log(value));  //або менш популярний синтаксис запису стрілочної функції в цьому випадку .then(console.log) - фактично це те ж саме
 </script>
 </body>
 </html>

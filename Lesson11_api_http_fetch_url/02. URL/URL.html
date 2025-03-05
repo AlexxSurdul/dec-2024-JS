@@ -11,7 +11,7 @@
 
 <script>
 
-    let url = new URL('https://jsonplaceholder.typicode.com/posts');
+    let url = new URL('https://jsonplaceholder.typicode.com/posts'); //клас URL використовується для передачі url з ключами/параметрами після ?
     url.searchParams.set('userId', 8);
     url.searchParams.set('asd', 'asfdhasdfhdaf');
     console.log(url.searchParams.get('asd'));
