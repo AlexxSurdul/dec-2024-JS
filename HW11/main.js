@@ -26,10 +26,10 @@ fetch('https://dummyjson.com/carts?limit=5')
             //заповнюємо кожен кошик даними з об'єкта
             cartBox.innerHTML = `
             <h3>Cart #${cart.userId}</h3>
-             <p>total: ${cart.total}</p>
-             <p>discountedTotal: ${cart.discountedTotal}</p>
-             <p>totalProducts:  ${cart.totalProducts}</p>
-             <p>totalQuantity:  ${cart.totalQuantity}</p>`;
+             <p><strong>Total</strong>: ${cart.total}</p>
+             <p><strong>Discounted Total</strong>: ${cart.discountedTotal}</p>
+             <p><strong>Total Products</strong>:  ${cart.totalProducts}</p>
+             <p><strong>Total Quantity</strong>:  ${cart.totalQuantity}</p>`;
 
             //створюємо обгортку для продуктів в кошику
             let productsBox = document.createElement("div");
@@ -52,11 +52,11 @@ fetch('https://dummyjson.com/carts?limit=5')
 
                 //наповнюємо продукти даними
                 productBox.innerHTML = `
-                    <h5>Products</h5>
+                    <h4>Products</h4>
                     <img src="${product.thumbnail}" alt="${product.title}" style="width: 200px">
-                    <p>title: ${product.title}</p>
-                    <p>price: ${product.price}</p>
-                    <p>quantity: ${product.quantity}</p>
+                    <p>Title: ${product.title}</p>
+                    <p>Price: ${product.price}</p>
+                    <p>Quantity: ${product.quantity}</p>
                 `;
             }
         }
