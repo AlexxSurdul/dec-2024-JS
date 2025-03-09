@@ -33,7 +33,7 @@
         .then(value => value.json());
 
 
-    // Promise.all([users, posts]).then(result => {
+    // Promise.all([users, posts]).then(result => { //Promise.all дозволяє працювати з результатом роботи кількох асинхронних функцій
     //     let [users, posts] = result;
     //     for (const user of users) {
     //         user.posts = [];
@@ -47,8 +47,8 @@
     //
     // });
 
-    // Promise.race([server1, server2]).then(value => console.log(value));
-    Promise.any([users, posts]).then(value => console.log(value));
+    // Promise.race([server1, server2]).then(value => console.log(value)); //Promise.race а-ля перегони, далі проходить запит, який виконається перший
+    Promise.any([users, posts]).then(value => console.log(value)); //Promise.any видасть будь-які дані, які отримає перші, майже те ж саме що Promise.race
 
 
 </script>

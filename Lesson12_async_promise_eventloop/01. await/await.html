@@ -6,9 +6,9 @@
 </head>
 <body>
 <script>
-
-    async function foo() {
-        let users = await fetch('https://jsonplaceholder.typicode.com/users')
+    //щоб мати можливість працювати з асинхронною функцією, як із синхронною і отримувати результат її роботи одразу потрібно:
+    async function foo() {   //спочатку вказати, що функція async
+        let users = await fetch('https://jsonplaceholder.typicode.com/users') //і додати перед запитом await
             .then(value => value.json());
 
         let posts = await fetch('https://jsonplaceholder.typicode.com/posts')

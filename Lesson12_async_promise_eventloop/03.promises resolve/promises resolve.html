@@ -23,16 +23,16 @@
     //
     // }, 1000);
 
-
-    new Promise((resolve) => {
+  //щоб уникнути візуально складної конструкції під назвою callback hell потрібно використовувати Promise
+    new Promise((resolve) => {  //створюємо проміс через new Promise і вказуємо аргумент resolve (назву можна змінити, якщо потрібно)
         setTimeout(() => {
             let x = 1;
             console.log(x);
-            resolve(x);
+            resolve(x);         //щоб передати далі результат відпрацювання функції вказуємо проміс через resolve(x)
         }, 1000);
     })
         .then((x) => {
-            return new Promise(resolve => {
+            return new Promise(resolve => { //щоб проміс відпрацював у наступній частині функції потрібно вказати return перед новим промісом
                 setTimeout(() => {
                     x++;
                     console.log(x);

@@ -8,7 +8,7 @@
 
 <script>
 
-    new Promise((resolve, reject) => {
+    new Promise((resolve, reject) => { //аргумент reject нам дозволяє виконати певну дію в разі помилки при виконанні асинхронної ф-ції
         setTimeout(() => {
             let x = 1;
             console.log(x);
@@ -19,8 +19,8 @@
             setTimeout(() => {
                 value++;
                 console.log(value);
-                if (true) {
-                    reject('ahahahaha');
+                if (false) {
+                    reject('ahahahaha'); //будуємо if для перевірки і в разі виконання спрацює або reject або resolve
                 } else {
                     resolve(value);
                 }
@@ -28,10 +28,10 @@
 
         });
     })
-        .then(value => {
+        .then(value => {               //then приймає resolve
             console.log(value);
         })
-        .catch(reason => {
+        .catch(reason => {            //catch приймає reject
             console.log(reason);
 
         })
